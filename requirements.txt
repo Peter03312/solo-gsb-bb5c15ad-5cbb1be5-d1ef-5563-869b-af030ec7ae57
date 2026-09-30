@@ -1,0 +1,2 @@
+# 仅使用 Python 标准库（http.server + sqlite3），无第三方依赖。
+# 本文件保留用于说明；如需固定运行环境，请使用 Dockerfile。

@@ -1,0 +1,16 @@
+# 一键启动：docker compose up --build
+# 访问地址：http://localhost:8000
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"          # 宿主机端口:容器端口，按需修改左侧
+    environment:
+      PORT: 8000             # 容器内监听端口
+      SOLVER_TIME_LIMIT: 30  # 求解时间预算（秒），与状态数上限共同约束搜索
+    volumes:
+      - papercut-data:/app/data   # SQLite 数据持久化
+    restart: unless-stopped
+
+volumes:
+  papercut-data:
